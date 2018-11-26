@@ -13,6 +13,12 @@ import network.mysterium.vpn.BuildConfig;
 import java.util.Arrays;
 import java.util.List;
 
+import io.invertase.firebase.RNFirebasePackage;
+
+// optional packages - add/remove as appropriate
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -26,7 +32,13 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
               new MainReactPackage(),
               new VectorIconsPackage(),
-              new MysteriumClientPackage()
+              new MysteriumClientPackage(),
+
+              new RNFirebasePackage(),
+
+              // add/remove these packages as appropriate
+              new RNFirebaseAnalyticsPackage(),
+              new RNFirebaseAuthPackage()
       );
     }
 
